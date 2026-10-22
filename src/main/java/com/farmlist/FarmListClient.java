@@ -153,8 +153,8 @@ public class FarmListClient implements ClientModInitializer {
 
     static void message(String text) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc.player != null) {
-            mc.player.displayClientMessage(Component.literal(text), false);
+        if (mc.gui != null) {
+            mc.gui.getChat().addClientSystemMessage(Component.literal(text));
         }
     }
 }
